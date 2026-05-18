@@ -39,8 +39,7 @@ className="flex justify-center"        >
                 <img
                   src={aboutImg}
                   alt="about"
-                  className="w-full h-full object-cover object-center group-hover:scale-110 transition duration-700"
-                />
+className="w-full h-full object-cover object-[center_20%] group-hover:scale-110 transition duration-700"                />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#060816]/70 via-transparent to-transparent" />
               <motion.div
@@ -90,7 +89,7 @@ className="flex flex-col"        >
               experiences with modern technologies.
             </p>
           </div>
-
+<br></br>
           {/* STATS */}
           <div className="grid grid-cols-2 gap-3 pt-10 max-w-[520px]">
             {stats.map((item, index) => (

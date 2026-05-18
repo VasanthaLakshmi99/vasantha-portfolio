@@ -8,10 +8,10 @@ import profilePhoto from "../assets/profileimg.jpg";
 
 
 const socialLinks = [
-  { icon: <FaLinkedin />,  label: "LinkedIn",  href: "#" },
-  { icon: <FaGithub />,    label: "GitHub",    href: "#" },
-  { icon: <MdEmail />,     label: "Email",     href: "#" },
-  { icon: <FaInstagram />, label: "Instagram", href: "#" },
+  { icon: <FaLinkedin />,  label: "LinkedIn",  href: "https://www.linkedin.com/in/vasantha-lakshmi-thotireddy-88083428a/" },
+  { icon: <FaGithub />,    label: "GitHub",    href: "https://github.com/VasanthaLakshmi99" },
+  { icon: <MdEmail />,     label: "Email",     href: "mailto:vasanthathotireddy99@gmail.com" },
+  { icon: <FaInstagram />, label: "Instagram", href: "https://www.instagram.com/_t_vasantha?igsh=ajN6ZjlzemNkM3o="},
 ];
 const ExcelIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="#21A366">
@@ -71,15 +71,15 @@ function Hero() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-purple-900/20 rounded-full blur-3xl pointer-events-none" />
 
       {/* MAIN CONTAINER */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-12 lg:px-20 xl:px-28 grid lg:grid-cols-2 gap-10 items-center py-14">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-12 lg:px-20 xl:px-28 grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-center py-14">
 
         {/* ════════════ LEFT COLUMN ════════════ */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          className="flex flex-col gap-6"
-        >
+          //className="flex flex-col gap-6"
+className="flex flex-col gap-6 max-w-[620px] lg:ml-24 xl:ml-32"        >
 
           {/* Available pill */}
           <motion.div
@@ -172,12 +172,36 @@ function Hero() {
             transition={{ delay: 0.75, duration: 0.6 }}
             className="flex flex-wrap items-center gap-4"
           >
-            <button className="w-[148px] h-[50px] bg-gradient-to-r from-violet-500 to-purple-600 text-white rounded-xl text-[15px] font-bold tracking-wide hover:scale-105 hover:shadow-[0_8px_28px_rgba(139,92,246,0.5)] transition-all duration-300">
-              Hire Me
-            </button>
-            <button className="w-[168px] h-[50px] border border-violet-400/60 text-violet-300 rounded-xl text-[15px] font-semibold tracking-wide hover:bg-violet-400/10 hover:border-violet-400 hover:scale-105 transition-all duration-300">
-              View Projects ↗
-            </button>
+            <a
+  href="#contact"
+  whileHover={{ scale: 1.04, y: -1 }}
+  whileTap={{ scale: 0.97 }}
+  className="
+    relative overflow-hidden
+    w-[158px] h-[39px]
+    rounded-xl
+    bg-gradient-to-r
+    from-violet-500
+    to-purple-600
+    text-white
+    text-[15px]
+    font-bold
+    tracking-wide
+    shadow-[0_4px_20px_rgba(139,92,246,0.4)]
+    hover:shadow-[0_8px_30px_rgba(139,92,246,0.6)]
+    transition-shadow duration-300
+    shrink-0
+    flex items-center justify-center
+  "
+>
+  Hire Me
+</a>
+            <a
+  href="#projects"
+  className="w-[158px] h-[40px] border border-violet-400/60 text-violet-300 rounded-xl text-[15px] font-semibold tracking-wide hover:bg-violet-400/10 hover:border-violet-400 hover:scale-105 transition-all duration-300 flex items-center justify-center"
+>
+  View Projects ↗
+</a>
           </motion.div>
 
           {/* Social icons */}
@@ -230,25 +254,24 @@ className="hidden lg:flex justify-center items-center relative h-[380px]"       
           </motion.div>
 
           {/* PROFILE IMAGE — full body style like image2, no circular crop */}
-          <div className="relative z-10 w-[230px] h-[320px] flex items-center justify-center">
+<div className="relative z-10 w-[260px] h-[100px] flex items-center justify-center">
 
             {/* Subtle glow under feet */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-48 h-8 bg-violet-500/40 blur-2xl rounded-full" />
 
             {/* Image container — bottom-anchored, no circle clip */}
-            <div className="relative w-full h-full overflow-hidden"
-              style={{
-                maskImage: "linear-gradient(to top, white 70%, transparent 100%)",
-                WebkitMaskImage: "linear-gradient(to top, white 70%, transparent 100%)",
-              }}
-            >
-              <img
-                src={profilePhoto}
-                alt="Vasantha Lakshmi Thotireddy"
-                className="w-full h-full object-cover object-top"
-                style={{ filter: "brightness(1.05) contrast(1.05)" }}
-              />
-            </div>
+        {/* Image container — circular, aligned with rings */}
+<div
+  className="relative w-[260px] h-[300px] rounded-full overflow-hidden z-10"
+  style={{ border: "2px solid rgba(139,92,246,0.5)" }}
+>
+  <img
+    src={profilePhoto}
+    alt="Vasantha Lakshmi Thotireddy"
+    className="w-full h-full object-cover object-center"
+    style={{ filter: "brightness(1.05) contrast(1.05)" }}
+  />
+</div>
           </div>
 
           {/* Floating skill badges — icon + label style like image2 */}

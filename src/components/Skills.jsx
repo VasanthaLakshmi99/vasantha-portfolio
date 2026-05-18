@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { MdPsychology } from "react-icons/md";
 
 import {
   FaHtml5,
@@ -21,6 +22,9 @@ import {
   SiPostgresql,
   SiPandas,
   SiFirebase,
+  SiDocker,
+  SiPostman,
+  SiJira,
   SiNumpy,
 } from "react-icons/si";
 
@@ -99,6 +103,10 @@ const skills = {
       name: "Matplotlib",
       icon: <FaPython className="text-orange-300" />,
     },
+{
+  name: "ML Algorithms",
+  icon: <MdPsychology className="text-pink-400" />,
+},
   ],
 
   Tools: [
@@ -122,6 +130,10 @@ const skills = {
       name: "Firebase",
       icon: <SiFirebase className="text-yellow-400" />,
     },
+     { name: "Docker",       icon: <SiDocker className="text-sky-400" /> },
+    { name: "Postman",      icon: <SiPostman className="text-orange-400" /> },
+    { name: "Jira",         icon: <SiJira className="text-blue-500" /> },
+  
   ],
 };
 
@@ -166,7 +178,7 @@ function Skills() {
           className="text-center"
         >
 
-          <h2 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+          <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
 
             Skills &{" "}
 
@@ -177,17 +189,15 @@ function Skills() {
           </h2>
 <br></br>
 
-<p className="mt-8 max-w-[900px] text-left mx-auto text-gray-300 text-[18px] leading-[2] font-medium">
-
-  I specialize in building modern web applications,
-  scalable backend systems, and responsive user
-  interfaces using technologies like React, Python,
-  JavaScript, and SQL. My focus is on creating clean,
-  high-performance digital experiences with strong
-  problem-solving, optimized architecture, and
-  user-friendly design principles.
-
-</p>
+<div className="flex flex-col items-center">
+  <p className="mt-8 max-w-[900px] mx-auto text-center text-gray-300 text-[18px] leading-[2] font-medium">
+    I specialize in building modern web applications, scalable backend systems,
+    and responsive user interfaces using technologies like React, Python,
+    JavaScript, and SQL. My focus is on creating clean, high-performance
+    digital experiences with strong problem-solving, optimized architecture,
+    and user-friendly design principles.
+  </p>
+</div>
 
         </motion.div>
 <br></br>

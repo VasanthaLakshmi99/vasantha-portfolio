@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 
 import {
   FaFacebookF,
@@ -16,6 +18,30 @@ import {
 } from "lucide-react";
 
 export default function Contact() {
+  const form = useRef();
+  const sendEmail = (e) => {
+
+  e.preventDefault();
+
+  emailjs.sendForm(
+    "service_8fija6h",
+    "template_ni4dnjt",
+    form.current,
+    "7YSlgRfkaUNlYxTfo"
+  )
+
+  .then(() => {
+
+alert("Message sent successfully! I'll get back to you soon.");
+
+  })
+
+  .catch((error) => {
+  console.error("EmailJS Error:", error);
+  alert("Failed to send message.");
+});
+
+};
   return (
     <section
       id="contact"
@@ -39,19 +65,15 @@ export default function Contact() {
           <p className="text-violet-400 uppercase tracking-[4px] text-sm font-semibold mb-4">
             GET IN TOUCH
           </p>
+<br></br>
+          <h3 className="text-3xl md:text-5xl font-bold text-white">
+              Contact Me
+          </h3>
 
-          <h2 className="text-5xl md:text-6xl font-bold text-white">
-            Contact Me
-          </h2>
-
-          <div className="w-24 h-1 rounded-full bg-gradient-to-r from-violet-500 to-cyan-400 mx-auto mt-6" />
+          <div className="w-80 h-1 rounded-full bg-gradient-to-r from-violet-500 to-cyan-400 mx-auto mt-6" />
 
           {/* FIX 1: text-left → text-center */}
-          <p className="text-gray-400 mt-8 max-w-2xl mx-auto text-left leading-8">
-            Open to freelance opportunities, collaborations,
-            full stack development projects, AI solutions,
-            and data-driven digital experiences.
-          </p>
+          <br></br>
         </motion.div>
 
         {/* CONTACT GRID */}
@@ -136,16 +158,21 @@ export default function Contact() {
 
             {/* FIX 4: Replaced <form> space-y-6 with flex flex-col gap-5 for consistent spacing.
                        Each field uses flex flex-col gap-2 so label and input are tightly paired. */}
-            <div className="flex flex-col gap-5">
-
+<form
+  ref={form}
+  onSubmit={sendEmail}
+  className="flex flex-col gap-5"
+>
               {/* NAME */}
               <div className="flex flex-col gap-2">
                 <label className="text-gray-300 text-sm font-medium">
                   Full Name
                 </label>
                 <input
-                  type="text"
-                  placeholder="Enter your name"
+  type="text"
+  name="from_name"
+  required
+  placeholder="Enter your name"
                   className="w-full h-12 px-5 rounded-xl bg-[#0c1224] border border-white/10 text-white outline-none focus:border-violet-500 transition placeholder:text-gray-600 text-[15px]"
                 />
               </div>
@@ -156,8 +183,10 @@ export default function Contact() {
                   Email Address
                 </label>
                 <input
-                  type="email"
-                  placeholder="Enter your email"
+  type="email"
+  name="from_email"
+  required
+  placeholder="Enter your email"
                   className="w-full h-12 px-5 rounded-xl bg-[#0c1224] border border-white/10 text-white outline-none focus:border-cyan-500 transition placeholder:text-gray-600 text-[15px]"
                 />
               </div>
@@ -168,7 +197,9 @@ export default function Contact() {
                   Your Message
                 </label>
                 <textarea
-                  rows="5"
+  name="message"
+  required
+  rows="5"
                   placeholder="Write your message..."
                   className="w-full px-5 py-3 rounded-xl bg-[#0c1224] border border-white/10 text-white outline-none resize-none focus:border-pink-500 transition placeholder:text-gray-600 text-[15px]"
                 />
@@ -182,7 +213,7 @@ export default function Contact() {
                 Send Message
               </button>
 
-            </div>
+            </form>
 
           </motion.div>
 

@@ -63,9 +63,9 @@ function Navbar() {
           className="flex items-center gap-3 cursor-pointer shrink-0"
         >
           <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-violet-500 to-purple-700 flex items-center justify-center shadow-[0_0_14px_rgba(139,92,246,0.55)] shrink-0">
-            <span className="text-[11px] font-black text-white tracking-tighter">VL</span>
+            <span className="text-[11px] font-black text-white tracking-tighter">TVL</span>
           </div>
-          <span className="text-[19px] font-bold tracking-tight bg-gradient-to-r from-white to-violet-300 bg-clip-text text-transparent whitespace-nowrap">
+          <span className="text-[22px] font-bold tracking-tight bg-gradient-to-r from-white to-violet-300 bg-clip-text text-transparent whitespace-nowrap">
             Vasantha Thotireddy
           </span>
         </motion.div>

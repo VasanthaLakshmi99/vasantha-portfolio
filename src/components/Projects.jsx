@@ -314,7 +314,7 @@ function Projects() {
         <div className="text-center">
 
 
-          <h2 className="mt-5 text-5xl md:text-6xl font-bold text-white">
+          <h2 className="mt-5 text-3xl md:text-5xl font-bold text-white">
 
             Featured{" "}
 
@@ -353,8 +353,8 @@ function Projects() {
 <br></br>
 
         {/* PROJECT GRID */}
-<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
-          {filteredProjects.map((project) => (
+<div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 ml:6 gap-7 ">   
+       {filteredProjects.map((project) => (
 
             <motion.div
               key={project.id}
@@ -367,7 +367,7 @@ function Projects() {
               className="
                 group
                 cursor-pointer
-                rounded-3xl
+                rounded-xl
                 overflow-hidden
                 border
                 border-white/10
@@ -379,7 +379,7 @@ function Projects() {
             >
 
              {/* IMAGE */}
-<div className="h-[220px] overflow-hidden bg-[#151521]">
+<div className="h-[180px] overflow-hidden bg-[#151521]">
 
   <img
     src={project.image}
@@ -399,11 +399,11 @@ function Projects() {
               {/* CONTENT */}
               <div className="p-5">
 
-                <h3 className="text-2xl font-semibold text-white">
+                <h4 className="text-lg font-semibold text-white">
                   {project.title}
-                </h3>
+                </h4>
 
-<p className="mt-3 text-gray-400 leading-6 text-[14px] line-clamp-4">                  {project.overview}
+<p className="mt-3 text-gray-400 leading-6 text-[14px] line-clamp-2">                  {project.overview}
                 </p>
 
               </div>
@@ -447,7 +447,7 @@ function Projects() {
                 max-w-5xl
                 max-h-[90vh]
                 overflow-y-auto
-                rounded-3xl
+                rounded-1xl
                 bg-[#11111d]
                 border
                 border-white/10
@@ -472,7 +472,7 @@ function Projects() {
               </button>
 
               {/* TITLE */}
-              <h2 className="text-5xl font-bold text-white text-center">
+              <h2 className="text-3xl font-bold text-white text-center">
                 {selectedProject.title}
               </h2>
 
